@@ -8,7 +8,7 @@ import React from 'react';
 class Machine extends React.Component {
   render() {
     // Dans tous les cas, afficher
-    return <p>Machine 1</p>
+    return <p>Machine 1 {this.props.number}, className = {this.props.isActive ? " yes" : "no"  } </p>
   }
 }
 
