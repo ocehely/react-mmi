@@ -8,3 +8,7 @@
     
     background-color:pink;
 }
+
+.machine.active{
+    color:white;
+}

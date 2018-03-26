@@ -8,7 +8,7 @@ import React from 'react';
 class Footer extends React.Component {
   render() {
     // Dans tous les cas, afficher
-    return <div className="footer">Machine 1 {this.props.title}</div>
+    return <div className="footer">footer{this.props.title}</div>
   }
 }
 
