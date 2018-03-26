@@ -40,21 +40,24 @@ class App extends React.Component{
     this.state ={
       machines : [
       { 
+        id:0,
         name: "machine1 def dans le state",
         isActive : true
       },
       {
+        id:1,
         name:"machine2 def dans le state",
         isActive : false
       },
       {
+        id:2,
         name: "machine3 def dans le state",
         isActive : true
       },
       ]
     };
    
-     console.log(this.state.machines.map (z=> z));
+    /* console.log(this.state.machines.map (z=> z));*/
  /* console.log(Object.keys(this.state.machines) .map(machine =>  ));*/
   }
  
@@ -70,9 +73,11 @@ class App extends React.Component{
     <div>
     <Header />
     {
-    this.state.machines.map(machine =>
+      this.state.machines.map(machine =>
       //console.log(machine.name) //appel dans la console
-      <Machine name={machine.name}
+      <Machine 
+      key={machine.id}
+      name={machine.name}
       isActive={machine.isActive}/> //appel dans sur la page 
     )}
     <Footer />
