@@ -19,8 +19,36 @@ class Machine extends React.Component {
    // this.setState(prevState => ({
    //   isActive: !prevState.isActive
    // }));
-   console.log('woot.');
+   //console.log('woot.');
    console.log(this.props.name);
+   console.log(this.props.isActive); 
+     
+ 
+ //if( this.props = {isActive: true}){
+ //     this.props ={ isActive: false};
+  //    console.log('hello');
+ //};
+ //console.log(this.props.isActive)
+ //if (this.props ={isActive :false}){
+ //    this.props ={ isActive: true};
+ //    console.log('bye');
+ //};
+ //else (this.props={isActive:false})
+    // this.props ={isActive: true};
+  //   console.log('coucou');
+ //};
+ 
+  
+  
+   // if (this.props.isActive ){
+       //  return(
+        //         this.props.isActive : false
+         //        );
+        //return true;
+       // this.props.isActive ? true : false ; 
+     //  console.log('hello');
+  // }; 
+  console.log(this.props.isActive);
   }
   render() {
     // Dans tous les cas, afficher
