@@ -55,6 +55,7 @@ class App extends React.Component{
         isActive : true
       },
       ]
+      
     };
    
     /* console.log(this.state.machines.map (z=> z));*/
