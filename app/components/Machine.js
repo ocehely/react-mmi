@@ -15,19 +15,24 @@ class Machine extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
      */
-  handleClick() {
+ OntoggleClick(){
+  
+ };
+ 
+ 
+ // handleClick() {
    // this.setState(prevState => ({
    //   isActive: !prevState.isActive
    // }));
    //console.log('woot.');
-   console.log(this.props.name);
-   console.log(this.props.isActive); 
+  // console.log(this.props.name);
+   //console.log(this.props.isActive); 
      
  
- if( this.props = {isActive: true}){
-      this.props ={ isActive: false};
-      console.log('hello');
- };
+ //if( this.props = {isActive: true}){
+   //   this.props ={ isActive: false};
+     // console.log('hello');
+// };
  //console.log(this.props.isActive)
  //if (this.props ={isActive :false}){
  //    this.props ={ isActive: true};

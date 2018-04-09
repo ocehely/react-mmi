@@ -57,7 +57,17 @@ class App extends React.Component{
       ]
       
     };
-   
+    // Méthode pour activer une machine
+  handleStatusChange(key) {
+    // 1. On copie le state existant
+    const machines = { ...this.state.machines };
+    // 2. On modifie le status de CETTE machine
+    machines[key].isActive = true;
+    // Pour vérifier la nouvelle collection dans la console :
+    console.log({ machines });
+
+    // 3. On applique cette nouvelle collection au state
+    this.setState({ machines });
     /* console.log(this.state.machines.map (z=> z));*/
  /* console.log(Object.keys(this.state.machines) .map(machine =>  ));*/
   }
