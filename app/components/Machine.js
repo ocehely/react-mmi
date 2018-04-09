@@ -24,10 +24,10 @@ class Machine extends React.Component {
    console.log(this.props.isActive); 
      
  
- //if( this.props = {isActive: true}){
- //     this.props ={ isActive: false};
-  //    console.log('hello');
- //};
+ if( this.props = {isActive: true}){
+      this.props ={ isActive: false};
+      console.log('hello');
+ };
  //console.log(this.props.isActive)
  //if (this.props ={isActive :false}){
  //    this.props ={ isActive: true};
