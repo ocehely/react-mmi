@@ -4,39 +4,28 @@
  *
  */
 import React from 'react';
+import Toggle from 'react-toggle';
+import "react-toggle/style.css" // for ES6 modules
+
 
 // On importe ici les composants qu'on veut afficher
+import AddMachine from '../../components/AddMachine.js';
 import Machine from '../../components/Machine.js';
 import Header from '../../components/header.js';
 import Footer from '../../components/footer.js';
 import '../../CSS/style.css'; 
 // On peut aussi importer du CSS de la meme facon.
 
-/*export default function App() {
-  return (
-    // Un return doit retourner un seul élément du DOM
-    // Si on veut afficher plusieurs éléments adjacents,
-    // On devra donc les encapsuler dans une DIV parente.
-   
-   
-   
-  /*<div >
-  <Header />
-      <Machine name ="Machine 1" isActive />
-      <Machine name ="Machine 2" />
-      <Machine name ="Machine 3" isActive/>
-    
-  
-  <Footer />
-  </div>
- 
-
-  );
-}*/
 
 class App extends React.Component{
  constructor(props) {
     super(props);
+   
+    this.handleStatusChange = this.handleStatusChange.bind(this);
+     this.addMachineToState = this.addMachineToState.bind(this);
+     
+    
+  
     this.state ={
       machines : [
       { 
@@ -57,40 +46,76 @@ class App extends React.Component{
       ]
       
     };
+    
+ }
     // Méthode pour activer une machine
   handleStatusChange(key) {
+    console.log ('handleStatusChange');
     // 1. On copie le state existant
     const machines = { ...this.state.machines };
+    console.log(machines[key].isActive);
     // 2. On modifie le status de CETTE machine
-    machines[key].isActive = true;
+    machines[key].isActive =  !machines[key].isActive;
     // Pour vérifier la nouvelle collection dans la console :
+    
     console.log({ machines });
 
     // 3. On applique cette nouvelle collection au state
     this.setState({ machines });
     /* console.log(this.state.machines.map (z=> z));*/
  /* console.log(Object.keys(this.state.machines) .map(machine =>  ));*/
-  }
+
+ console.log(machines[key].isActive);
  
- /* <Machine name ={this.state.machines[0].name} 
-     isActive={this.state.machines[0].isActive} />
-      <Machine  name ={this.state.machines[1].name} 
-      isActive={this.state.machines[1].isActive}/>
-      <Machine  name ={this.state.machines[2].name} 
-      isActive={this.state.machines[2].isActive}/>*/
+  }
+   // Méthode pour ajouter un formulaire
+     addMachineToState(machine) {
+    console.log("addMachineToState");
+    console.log(machine);
+    return 
+    this.setState({machine}) ; 
+  } 
+
+ 
+ 
    render() {
+       // Calcul des compteurs
+     const machinesIds = Object.keys(this.state.machines);
+    const totalActive = machinesIds.reduce((prevTotal, key) => {
+      const machine = this.state.machines[key];
+      const isAvailable = machine && machine.isActive;
+      // On incrémente le compteur à chaque fois que l'on trouve une machine active
+      return isAvailable ? prevTotal + 1 : prevTotal
+    }, 0);
+    const total = machinesIds.length;
+    
      return (
+         
+          /*Conteneur de notre liste*/
+          /*Compteurs*/
+        
     // Dans tous les cas, afficher
-    <div>
-    <Header />
+   <div>
+     <div className="counter">
+            <strong>{totalActive}</strong> / <strong>{total}</strong> Machines actives
+     </div>
+   <Header />
+   <AddMachine addMachineToState={this.addMachineToState}/>
     {
-      this.state.machines.map(machine =>
+     Object
+     .keys(this.state.machines)
+     
+      .map(key =>
       //console.log(machine.name) //appel dans la console
-      <Machine 
-      key={machine.id}
-      name={machine.name}
-      isActive={machine.isActive}/> //appel dans sur la page 
-    )}
+         <Machine name={this.state.machines[key].name}
+                     
+                       key={this.state.machines[key].id}
+                       index={this.state.machines[key].id}
+                       handleStatusChange={this.handleStatusChange}
+                       isActive={this.state.machines[key].isActive}/>
+                       )}
+                       
+                 
     <Footer />
    
     </div>

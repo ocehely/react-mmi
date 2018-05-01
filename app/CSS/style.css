@@ -55,3 +55,24 @@
   background-color: #f44336;
   cursor: pointer;
 }
+
+/* Counter */
+.counter {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.add-machine-form {
+  background-color: #f3f3f3;
+  padding: 30px;
+ text-align: center;
+  margin: 20px auto;
+  font-size: 1.4em;
+}
+
+.add-machine-form input,
+.add-machine-form select {
+  background-color: #eaeaea;
+  padding: 4px 6px;
+ margin-right: 10px;
+}
